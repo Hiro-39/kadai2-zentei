@@ -16,7 +16,7 @@ def scraping():
         for article_elm in article_elms:
             # print(article_elm.text)
             title = article_elm.find_element_by_tag_name("h2").text
-            post_date = article_elm.find_element_by_class_name("post_date").text
+            post_date = article_elm.find_element_by_class_name("post-date").text
             article_link = article_elm.get_attribute("href")
             print(title, post_date, article_link)
     
@@ -32,6 +32,6 @@ def scraping():
             print("最終ページです")
             break
           
-    df.to_csv("記事一覧.csv", encoding="utf.8_sig") 
-      
+    df.to_csv("記事一覧.csv", encoding="utf_8_sig") 
+          
 scraping()
